@@ -1,4 +1,4 @@
-rootProject.name = "%NAME%"
+rootProject.name = "aoc24"
 
 pluginManagement {
     repositories {
