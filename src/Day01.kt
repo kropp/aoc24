@@ -1,21 +1,26 @@
+import kotlin.math.absoluteValue
+
 fun main() {
     fun part1(input: List<String>): Int {
-        return input.size
+        val pairs = input.map { it.split(" ", limit = 2) }
+        val list1 = pairs.map { it[0].trim().toInt() }.sorted()
+        val list2 = pairs.map { it[1].trim().toInt() }.sorted()
+        return list1.zip(list2).sumOf { (a, b) -> (a - b).absoluteValue }
     }
 
     fun part2(input: List<String>): Int {
-        return input.size
+        val pairs = input.map { it.split(" ", limit = 2) }
+        val list1 = pairs.map { it[0].trim().toInt() }.sorted()
+        val list2 = pairs.map { it[1].trim().toInt() }.sorted()
+
+        return list1.sumOf { n -> list2.count { it == n } * n }
     }
 
-    // Test if implementation meets criteria from the description, like:
-    check(part1(listOf("test_input")) == 1)
+    val sample = "3   4\n4   3\n2   5\n1   3\n3   9\n3   3".lines()
+    check(part1(sample) == 11)
+    check(part2(sample) == 31)
 
-    // Or read a large test input from the `src/Day01_test.txt` file:
-    val testInput = readInput("Day01_test")
-    check(part1(testInput) == 1)
-
-    // Read the input from the `src/Day01.txt` file.
-    val input = readInput("Day01")
+    val input = readInput("day01")
     part1(input).println()
     part2(input).println()
 }
