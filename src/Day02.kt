@@ -35,7 +35,7 @@ fun main() {
     check(part1(sample) == 2)
     check(part2(sample) == 4)
 
-    val input = readInput("day02")
+    val input = readStrings("day02")
     part1(input).println()
     part2(input).println()
 }

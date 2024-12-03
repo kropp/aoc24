@@ -20,7 +20,7 @@ fun main() {
     check(part1(sample) == 11)
     check(part2(sample) == 31)
 
-    val input = readInput("day01")
+    val input = readStrings("day01")
     part1(input).println()
     part2(input).println()
 }
