@@ -1,3 +1,7 @@
+package day03
+
+import readInput
+
 fun main() {
     fun part1(input: String): Int {
         val multiplications = Regex("""mul\((\d+),(\d+)\)""").findAll(input).map {
@@ -11,7 +15,7 @@ fun main() {
         var enabled = true
         var sum = 0
         for (command in commands) {
-            when(command.value) {
+            when (command.value) {
                 "do()" -> enabled = true
                 "don't()" -> enabled = false
                 else -> if (enabled) {
@@ -26,6 +30,6 @@ fun main() {
     check(part2("xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))") == 48)
 
     val input = readInput("day03")
-    part1(input).println()
-    part2(input).println()
+    println(part1(input))
+    println(part2(input))
 }

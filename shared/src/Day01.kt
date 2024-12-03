@@ -1,3 +1,6 @@
+package day01
+
+import readStrings
 import kotlin.math.absoluteValue
 
 fun main() {
@@ -21,6 +24,6 @@ fun main() {
     check(part2(sample) == 31)
 
     val input = readStrings("day01")
-    part1(input).println()
-    part2(input).println()
+    println(part1(input))
+    println(part2(input))
 }

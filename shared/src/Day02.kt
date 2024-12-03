@@ -1,3 +1,6 @@
+package day02
+
+import readStrings
 import kotlin.math.absoluteValue
 import kotlin.math.sign
 
@@ -10,15 +13,15 @@ fun main() {
             }
 
         val isTolerated: Boolean
-        get() {
-            for (i in levels.indices) {
-                val before = if (i > 0) levels.subList(0, i) else emptyList()
-                val after = if (i < levels.size - 1) levels.subList(i + 1, levels.size) else emptyList()
-                if (Report(before + after).isSafe)
-                    return true
+            get() {
+                for (i in levels.indices) {
+                    val before = if (i > 0) levels.subList(0, i) else emptyList()
+                    val after = if (i < levels.size - 1) levels.subList(i + 1, levels.size) else emptyList()
+                    if (Report(before + after).isSafe)
+                        return true
+                }
+                return false
             }
-            return false
-        }
     }
 
     fun part1(input: List<String>): Int {
@@ -36,6 +39,6 @@ fun main() {
     check(part2(sample) == 4)
 
     val input = readStrings("day02")
-    part1(input).println()
-    part2(input).println()
+    println(part1(input))
+    println(part2(input))
 }

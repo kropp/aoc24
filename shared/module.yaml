@@ -1,0 +1,16 @@
+product:
+  type: lib
+  platforms: [jvm, iosSimulatorArm64, android]
+
+dependencies:
+  - $compose.foundation: exported
+  - $compose.material3: exported
+  - org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0
+  - org.jetbrains.kotlinx:kotlinx-io-core:0.6.0
+
+dependencies@jvm:
+  - $compose.desktop.currentOs
+
+settings:
+  compose:
+    enabled: true
