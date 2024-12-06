@@ -8,4 +8,4 @@ import kotlinx.io.readString
  */
 fun readStrings(name: String) = readInput(name).lines()
 
-fun readInput(name: String) = SystemFileSystem.source(Path("shared/tasks/$name.txt")).buffered().readString().trim()
+fun readInput(name: String) = SystemFileSystem.source(Path("tasks/$name.txt")).buffered().readString().trim()

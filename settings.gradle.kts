@@ -1,14 +1,32 @@
-rootProject.name = "aoc24"
+rootProject.name = "aoc2024"
 
 pluginManagement {
     repositories {
-        mavenCentral()
-        google()
+        google {
+            content { 
+              	includeGroupByRegex("com\\.android.*")
+              	includeGroupByRegex("com\\.google.*")
+              	includeGroupByRegex("androidx.*")
+              	includeGroupByRegex("android.*")
+            }
+        }
         gradlePluginPortal()
-        maven("https://maven.pkg.jetbrains.space/public/p/amper/amper")
+        mavenCentral()
     }
 }
 
-plugins {
-    id("org.jetbrains.amper.settings.plugin").version("0.1.0")
+dependencyResolutionManagement {
+    repositories {
+        google {
+            content { 
+              	includeGroupByRegex("com\\.android.*")
+              	includeGroupByRegex("com\\.google.*")
+              	includeGroupByRegex("androidx.*")
+              	includeGroupByRegex("android.*")
+            }
+        }
+        mavenCentral()
+    }
 }
+
+include(":shared")

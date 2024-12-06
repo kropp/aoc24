@@ -1,7 +1,7 @@
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import day06.Day6
 
 @Composable
 fun Screen() {
-    Text("Advent of Code")
+    Day6()
 }
